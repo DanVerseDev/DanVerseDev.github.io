@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#091833">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Redirigiendo a DanVerse</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      background: #091833;
+      color: #ea00d9;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .loader {
+      text-align: center;
+      animation: fade .8s ease-out;
+    }
+
+    .loader::before {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 18px;
+      border: 2px solid #ea00d9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: .08em;
+      opacity: .85;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <main class="loader">
+    <p>Redirigiendo a DanVerse</p>
+  </main>
+  <script>
+    setTimeout(() => {
+      location.replace("https://danverse-web.onrender.com");
+    }, 3000);
+  </script>
+</body>
+</html>

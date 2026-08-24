@@ -7,15 +7,21 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#091833">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>Redirigiendo a DanVerse</title>
+
   <style>
-    * { box-sizing: border-box; }
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       width: 100%;
       height: 100%;
     }
+
     body {
       display: grid;
       place-items: center;
@@ -49,22 +55,39 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes fade {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
   <main class="loader">
     <p>Redirigiendo a DanVerse</p>
   </main>
+
   <script>
     setTimeout(() => {
-      location.replace("https://danverse-web.onrender.com");
+      const destination =
+        "https://danverse-web.onrender.com" +
+        location.pathname +
+        location.search +
+        location.hash;
+
+      location.replace(destination);
     }, 3000);
   </script>
 </body>
